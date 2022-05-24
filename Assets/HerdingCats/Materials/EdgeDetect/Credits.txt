@@ -1,0 +1,7 @@
+https://github.com/jean-moreno/EdgeDetect-PostProcessingUnity
+
+I did not make this, although I did modify the code quite a bit to get the right look and feel.
+
+I didn't have time to request this as a third-party add on, but since newer versions of Unity have this as a default feature of the shader graph,
+and I cannot use the shader graph for my cat shader since it is currently broken and does not support vertex shading, I figured that this would be 
+acceptable as it is essentially just a fix for a broken unity feature.
