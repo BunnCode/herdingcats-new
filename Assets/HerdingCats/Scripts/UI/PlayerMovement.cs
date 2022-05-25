@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour {
     public KeyCode JumpKeyCode = KeyCode.Space;
-    public float JumpStrength = 1;
+    public float JumpStrength;
     public CharacterController controller;
 
     public float speed = 12f;
