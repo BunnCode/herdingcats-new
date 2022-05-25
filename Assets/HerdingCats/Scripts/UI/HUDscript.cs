@@ -1,9 +1,11 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
 using Unity.VisualScripting;
+using UnityEngine.UI;
 
 public class HUDscript : MonoBehaviour {
     private static HUDscript _instance;
@@ -23,6 +25,9 @@ public class HUDscript : MonoBehaviour {
             return _instance;
         }
     }
+
+    public float countdownTime = 300f;
+    public TextMeshProUGUI countdownDisplay;
 
     /// <summary>
     /// Text element displaying lives left
@@ -62,6 +67,7 @@ public class HUDscript : MonoBehaviour {
 
     public GameObject gameOverText;
     public GameObject playAgainButton;
+    public GameObject youWinText;
 
 
     // Start is called before the first frame update
@@ -74,6 +80,8 @@ public class HUDscript : MonoBehaviour {
         UpdateFreeMeterText();
         gameOverText.SetActive(false);
         playAgainButton.SetActive(false);
+        youWinText.SetActive(false);
+        StartCoroutine(CountdownToStart());
     }
 
     // Update is called once per frame
@@ -88,6 +96,25 @@ public class HUDscript : MonoBehaviour {
             Time.timeScale = 0;
             Cursor.visible = true;
             Cursor.lockState = CursorLockMode.None;
+        }
+    }
+
+    IEnumerator CountdownToStart()
+    {
+        while(countdownTime >= 0)
+        {
+            TimeSpan time = TimeSpan.FromSeconds(countdownTime);
+            countdownDisplay.text = time.ToString(@"mm\:ss");
+                //time.Minutes.ToString() + ":" + time.Seconds.ToString();
+
+            yield return new WaitForSeconds(1f);
+
+            if (countdownTime == 0)
+            {
+                youWinText.SetActive(true);
+                playAgainButton.SetActive(true);
+            }
+            countdownTime--;
         }
     }
 
