@@ -6891,7 +6891,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh109042
+  m_Name: pb_Mesh44976
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -10755,7 +10755,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh24928
+  m_Name: pb_Mesh45860
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -16401,7 +16401,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh92216
+  m_Name: pb_Mesh44940
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -26155,7 +26155,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh24182
+  m_Name: pb_Mesh45106
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -27198,7 +27198,7 @@ MonoBehaviour:
   JumpKeyCode: 32
   JumpStrength: 15
   controller: {fileID: 1549264158}
-  speed: 12
+  speed: 18
 --- !u!1 &1550759504
 GameObject:
   m_ObjectHideFlags: 0
@@ -27553,7 +27553,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh24294
+  m_Name: pb_Mesh45218
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2

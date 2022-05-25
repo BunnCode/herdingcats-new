@@ -74,7 +74,7 @@ public class CatAI : MonoBehaviour {
     private CatState currentState = CatState.NONE;
 
     /// <summary>
-    /// Random locations ofr the cat to wander
+    /// Random locations for the cat to wander
     /// </summary>
     private List<Transform> randomPositions = new List<Transform>();
 
@@ -91,7 +91,7 @@ public class CatAI : MonoBehaviour {
     /// <summary>
     /// Time between making decisions
     /// </summary>
-    private float decisionTime = 15f;
+    private float decisionTime = 5f;
 
     /// <summary>
     /// Time to stay alive after triggering trap
@@ -101,7 +101,7 @@ public class CatAI : MonoBehaviour {
     /// <summary>
     /// The cat's curiousity levels.  This will increase over time.
     /// </summary>
-    private float curiosity = 10f;
+    private float curiosity = 0;
 
     /// <summary>
     /// Navmesh agent this cat is currently using
@@ -142,6 +142,7 @@ public class CatAI : MonoBehaviour {
     /// Set default state.  Once this calls, the AI loop begins!
     /// </summary>
     private void Start() {
+        curiosity = Random.Range(0, 90);
         setState(CatState.ROAMING);
         _billboardController = GetComponentInChildren<MultiBillboard>();
     }
@@ -331,5 +332,12 @@ public class CatAI : MonoBehaviour {
         /*
         catSpawner.spawnCat();
         Destroy(this.gameObject);*/
+    }
+
+    private void OnTriggerStay(Collider collisionInfo)
+    {
+        if (collisionInfo.GetComponent<Collider>().name == "First person player") {
+            Debug.Log("I'm walkin' here!");
+                }
     }
 }

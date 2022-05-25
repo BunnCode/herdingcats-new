@@ -11,7 +11,7 @@ public class CatSpawner : MonoBehaviour
     public Hazard hazard;
 
     //The spawn rate.
-    private const float SPAWN_RATE = 30;
+    private const float SPAWN_RATE = 20;
 
     //The TrappedCat prefab.
     public CatAI catPrefab;
