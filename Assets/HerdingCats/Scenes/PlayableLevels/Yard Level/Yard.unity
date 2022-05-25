@@ -26023,7 +26023,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4056719711486a949ad2d035c0e69d4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  countdownTime: 5
+  countdownTime: 300
   countdownDisplay: {fileID: 140052369}
   livesText: {fileID: 904297665}
   lives: 0
