@@ -81,7 +81,7 @@ public class CatAI : MonoBehaviour {
     /// <summary>
     /// All hazards in the level
     /// </summary>
-    private List<Hazard> hazards = new();
+    private List<Hazard> hazards = new ();
 
     /// <summary>
     /// Current target hazard
@@ -112,6 +112,8 @@ public class CatAI : MonoBehaviour {
     /// Scalar indicating how close this cat is to death, 0 = healthy, 1 = dead.
     /// </summary>
     private float _distressLevel = 0;
+
+    private bool inFreeZone = false;
 
     private MultiBillboard _billboardController;
 
@@ -145,13 +147,33 @@ public class CatAI : MonoBehaviour {
         curiosity = Random.Range(0, 90);
         setState(CatState.ROAMING);
         _billboardController = GetComponentInChildren<MultiBillboard>();
+        HUDscript.Instance.HideFreeDialog();
+
     }
+
 
     private void Update() {
         //Set the color of the cat based on distress level
         _billboardController.block.SetColor(
             "_Color", Color.Lerp(initialColor, distressColor, _distressLevel)
             );
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            //todo: This needs to be encapsulated in its own script or something
+            if (inFreeZone == true)
+            {
+                HUDscript.Instance.freeMeter += 1;
+                if (HUDscript.Instance.freeMeter >= 3)
+                {
+                    curiosityParticles.gameObject.SetActive(false);
+                    Debug.Log("F pressed!");
+                    rescue();
+                    HUDscript.Instance.freeMeter = 0;
+                    IncreaseScore();
+                    HUDscript.Instance.HideFreeDialog();
+                }
+            }
+        }
     }
 
     /// <summary>
@@ -289,11 +311,13 @@ public class CatAI : MonoBehaviour {
         //setState(CatState.DISTRESS);
     }
 
-   
+
     //Utility function that waits for nine seconds, then changes the cat's
     // state to DEAD
     private IEnumerator CatInTrouble() {
         curiosityParticles.gameObject.SetActive(false);
+        HUDscript.Instance.HideFreeDialog();
+        inFreeZone = false;
         //Coroutine for triggering ~meows of distress~
         IEnumerator MeowTrouble() {
             while (currentState == CatState.DISTRESS) {
@@ -328,16 +352,35 @@ public class CatAI : MonoBehaviour {
         goalHazard.occupied = false;
         goalHazard = null;
         setState(CatState.ROAMING);
-        //todo: Deprecated, delete
-        /*
-        catSpawner.spawnCat();
-        Destroy(this.gameObject);*/
+        inFreeZone = false;
     }
+
+
 
     private void OnTriggerStay(Collider collisionInfo)
     {
         if (collisionInfo.GetComponent<Collider>().name == "First person player") {
-            Debug.Log("I'm walkin' here!");
-                }
+            if (currentState == CatState.CURIOUS)
+            {
+                //Debug.Log("Eyyy I'm walkin' here!");
+                inFreeZone = true;
+                HUDscript.Instance.ShowFreeDialog();
+            }
+        }
+    }
+
+    private void OnTriggerExit(Collider collisionInfo)
+    {
+        if (collisionInfo.GetComponent<Collider>().name == "First person player") {
+            HUDscript.Instance.HideFreeDialog();
+            inFreeZone = false;
+        }
+    }
+
+    public void IncreaseScore()
+    {
+        //todo: This needs to be a different method instead of being directly controlled
+        HUDscript.Instance.score += 9;
     }
 }
+
