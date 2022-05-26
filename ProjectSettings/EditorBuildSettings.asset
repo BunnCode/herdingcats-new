@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/HerdingCats/Scenes/Menu/MainMenu.unity
+    guid: c5c62515aa92f55489c74decde080286
+  - enabled: 1
     path: Assets/HerdingCats/Scenes/PlayableLevels/Yard Level/Yard.unity
     guid: c655b06d42e752947af660805ae5fae4
   m_configObjects: {}
