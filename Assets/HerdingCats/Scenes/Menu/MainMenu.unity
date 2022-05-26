@@ -1376,7 +1376,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 811242095}
-  - component: {fileID: 811242096}
   m_Layer: 5
   m_Name: FoldParent
   m_TagString: Untagged
@@ -1405,17 +1404,6 @@ RectTransform:
   m_AnchoredPosition: {x: -0.5, y: -28.5}
   m_SizeDelta: {x: 103, y: 102}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!210 &811242096
-SortingGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 811242094}
-  m_Enabled: 1
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
 --- !u!1 &811465392
 GameObject:
   m_ObjectHideFlags: 0
@@ -1656,6 +1644,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 864482600}
+  MenuFadeTime: 2
+  MenuCanvasGroup: {fileID: 449767018}
 --- !u!114 &864482602
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2439,7 +2429,6 @@ GameObject:
   - component: {fileID: 1162746712}
   - component: {fileID: 1162746714}
   - component: {fileID: 1162746713}
-  - component: {fileID: 1162746715}
   m_Layer: 5
   m_Name: LetterBody
   m_TagString: Untagged
@@ -2505,17 +2494,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1162746711}
   m_CullTransparentMesh: 1
---- !u!210 &1162746715
-SortingGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1162746711}
-  m_Enabled: 1
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 2
 --- !u!1 &1163701636
 GameObject:
   m_ObjectHideFlags: 0
@@ -3711,7 +3689,6 @@ GameObject:
   - component: {fileID: 1939326084}
   - component: {fileID: 1939326086}
   - component: {fileID: 1939326085}
-  - component: {fileID: 1939326087}
   m_Layer: 5
   m_Name: Letter
   m_TagString: Untagged
@@ -3777,17 +3754,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1939326083}
   m_CullTransparentMesh: 1
---- !u!210 &1939326087
-SortingGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1939326083}
-  m_Enabled: 1
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 2
 --- !u!1 &2031503199
 GameObject:
   m_ObjectHideFlags: 0
