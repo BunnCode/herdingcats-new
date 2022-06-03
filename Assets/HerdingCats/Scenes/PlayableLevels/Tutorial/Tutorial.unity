@@ -546,7 +546,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh44674
+  m_Name: pb_Mesh155852
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -23094,12 +23094,10 @@ PrefabInstance:
 
         W A S D to move
 
-        Shift to sprint
+        Space to jump
 
-        Space
-        to jump
-
-        F to free cat (more on this later)
+        F
+        to free cat (more on this later)
 
 '
       objectReference: {fileID: 0}
