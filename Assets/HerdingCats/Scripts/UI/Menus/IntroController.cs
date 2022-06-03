@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -16,11 +17,14 @@ public class IntroController : MonoBehaviour {
     public CanvasGroup MainMenuCanvasGroup;
     public CanvasGroup BlackFadeCanvasGroup;
 
+    [DoNotSerialize]
     public bool _enabled;
 
     IEnumerator FadeInLetter(float transitionTime)
     {
+        Debug.Log("starting wait");
         yield return new WaitForSeconds(BlackFadeDelay);
+        Debug.Log("Menu shown");
         var endOfFrame = new WaitForEndOfFrame();
         var startTime = Time.time;
         var scalar = 0.0f;
@@ -35,9 +39,11 @@ public class IntroController : MonoBehaviour {
         MainMenuCanvasGroup.interactable = false;
         BlackFadeCanvasGroup.alpha = 0;
         _enabled = true;
+        Debug.Log("Menu shown");
     }
 
     void Start() {
+        Time.timeScale = 1;
         StartCoroutine(FadeInLetter(BlackFadeTime));
     }
     void Update() {
