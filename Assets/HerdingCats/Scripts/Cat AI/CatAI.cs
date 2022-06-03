@@ -165,7 +165,7 @@ public class CatAI : MonoBehaviour {
                 HUDscript.Instance.freeMeter += 1;
                 if (HUDscript.Instance.freeMeter >= 3)
                 {
-                    curiosityParticles.gameObject.SetActive(false);
+                    
                     Debug.Log("F pressed!");
                     rescue();
                     HUDscript.Instance.freeMeter = 0;
@@ -346,6 +346,7 @@ public class CatAI : MonoBehaviour {
     /// Free the cat
     /// </summary>
     public void rescue() {
+        curiosityParticles.gameObject.SetActive(false);
         _distressLevel = 0;
         curiosity = 0;
         Debug.Log("Rescued!");

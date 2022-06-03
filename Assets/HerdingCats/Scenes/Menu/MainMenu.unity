@@ -4249,6 +4249,7 @@ GameObject:
   - component: {fileID: 2088874043}
   - component: {fileID: 2088874042}
   - component: {fileID: 2088874041}
+  - component: {fileID: 2088874044}
   m_Layer: 5
   m_Name: Tutorial
   m_TagString: Untagged
@@ -4316,7 +4317,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 0
+  m_Interactable: 1
   m_TargetGraphic: {fileID: 2088874042}
   m_OnClick:
     m_PersistentCalls:
@@ -4359,3 +4360,16 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2088874039}
   m_CullTransparentMesh: 1
+--- !u!114 &2088874044
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2088874039}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ed0c80081abb6a4da8d3a7d126220b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SceneID: 2

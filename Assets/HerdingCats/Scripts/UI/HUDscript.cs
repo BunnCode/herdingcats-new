@@ -67,8 +67,14 @@ public class HUDscript : MonoBehaviour {
 
     public GameObject gameOverText;
     public GameObject playAgainButton;
+
+    public GameObject MainMenuButton;
     public GameObject youWinText;
 
+    /// <summary>
+    /// Is the game in tutorial mode?
+    /// </summary>
+    public bool TutorialMode = false;
 
     // Start is called before the first frame update
     void Start() {
@@ -80,8 +86,15 @@ public class HUDscript : MonoBehaviour {
         UpdateFreeMeterText();
         gameOverText.SetActive(false);
         playAgainButton.SetActive(false);
+        MainMenuButton.SetActive(false);
         youWinText.SetActive(false);
-        StartCoroutine(CountdownToStart());
+
+        if(!TutorialMode)
+            StartCoroutine(CountdownToStart());
+        else {
+            livesText.enabled = false;
+            countdownDisplay.enabled = false;
+        }
     }
 
     // Update is called once per frame
@@ -90,13 +103,30 @@ public class HUDscript : MonoBehaviour {
         UpdateLivesText();
         UpdateFreeMeterText();
         UpdateScoreText();
-        if (lives == 0) {
-            gameOverText.SetActive(true);
-            playAgainButton.SetActive(true);
-            Time.timeScale = 0;
-            Cursor.visible = true;
-            Cursor.lockState = CursorLockMode.None;
+        if (lives == 0 && !TutorialMode) {
+            Lose();
         }
+
+        if (TutorialMode && score >= 9 * 3) {
+            Win();
+        }
+    }
+
+    private void Lose() {
+        gameOverText.SetActive(true);
+        playAgainButton.SetActive(true);
+        MainMenuButton.SetActive(true);
+        Time.timeScale = 0;
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+    }
+    private void Win() {
+        Time.timeScale = 0;
+        youWinText.SetActive(true);
+        playAgainButton.SetActive(true);
+        MainMenuButton.SetActive(true);
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
     }
 
     IEnumerator CountdownToStart()
@@ -109,10 +139,8 @@ public class HUDscript : MonoBehaviour {
 
             yield return new WaitForSeconds(1f);
 
-            if (countdownTime == 0)
-            {
-                youWinText.SetActive(true);
-                playAgainButton.SetActive(true);
+            if (countdownTime == 0) {
+                Win();
             }
             countdownTime--;
         }

@@ -42,8 +42,15 @@ public class Hazard : MonoBehaviour {
     /// <param name="cat">TrappedCat to trap</param>
     /// <returns></returns>
     IEnumerator TrapCat(CatAI cat) {
+        var newframe = new WaitForEndOfFrame();
+        var startTime = Time.time;
         //Wait until trap can spring
-        yield return new WaitForSeconds(TIME_BEFORE_HAZARD_SPRINGS);
+        while (Time.time - startTime < TIME_BEFORE_HAZARD_SPRINGS) {
+            if (cat.goalHazard != this) 
+                freeCat();
+            yield return newframe;
+        }
+        
         //Once the trap has waited, spring if the cat is close enough
         trapped = true;
         Debug.Log("The cat is trapped!");

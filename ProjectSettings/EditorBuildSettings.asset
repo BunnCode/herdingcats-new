@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/HerdingCats/Scenes/PlayableLevels/Yard Level/Yard.unity
     guid: c655b06d42e752947af660805ae5fae4
+  - enabled: 1
+    path: Assets/HerdingCats/Scenes/PlayableLevels/Tutorial/Tutorial.unity
+    guid: 837543b88e20a8d4f911cb7d8d1320fa
   m_configObjects: {}
