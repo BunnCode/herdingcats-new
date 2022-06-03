@@ -33,6 +33,7 @@ public class IntroController : MonoBehaviour {
         }
 
         MainMenuCanvasGroup.interactable = false;
+        BlackFadeCanvasGroup.alpha = 0;
         _enabled = true;
     }
 
@@ -61,6 +62,7 @@ public class IntroController : MonoBehaviour {
             yield return endOfFrame;
         }
 
+        MainMenuCanvasGroup.alpha = 1;
         MainMenuCanvasGroup.interactable = true;
     }
 

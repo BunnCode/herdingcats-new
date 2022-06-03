@@ -315,6 +315,7 @@ public class CatAI : MonoBehaviour {
     //Utility function that waits for nine seconds, then changes the cat's
     // state to DEAD
     private IEnumerator CatInTrouble() {
+        GetComponent<Collider>().enabled = false;
         curiosityParticles.gameObject.SetActive(false);
         HUDscript.Instance.HideFreeDialog();
         inFreeZone = false;
@@ -353,6 +354,7 @@ public class CatAI : MonoBehaviour {
         goalHazard = null;
         setState(CatState.ROAMING);
         inFreeZone = false;
+        GetComponent<Collider>().enabled = true;
     }
 
 

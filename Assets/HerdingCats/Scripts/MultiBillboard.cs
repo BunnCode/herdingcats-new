@@ -60,13 +60,28 @@ public class MultiBillboard : MonoBehaviour {
     private Material _material;
     private Renderer _renderer;
 
-    public MaterialPropertyBlock block { get; private set; }
+    private MaterialPropertyBlock _block;
+
+    public MaterialPropertyBlock block {
+        get
+        {
+            if (_block == null) {
+                _block = new MaterialPropertyBlock();
+            }
+
+            return _block;
+        }
+        private set
+        {
+            _block = value;
+        }
+    }
 
     // Start is called before the first frame update
     void Start() {
         _material = GetComponent<Material>();
         _renderer = GetComponent<Renderer>();
-        block = new MaterialPropertyBlock();
+        
         //Generate texture- temporary hack for the alpha build
         GetGeneratedTexture();
     }
