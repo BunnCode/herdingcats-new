@@ -217,9 +217,11 @@ public class CatAI : MonoBehaviour {
         //Trigger appropriate behavior
         switch (currentState) {
             case CatState.ROAMING:
+                this.GetComponent<Target>().enabled = false;
                 StartCoroutine(roam());
                 break;
             case CatState.CURIOUS:
+                this.GetComponent<Target>().enabled = true;
                 StartCoroutine(ApproachHazard());
                 break;
             case CatState.DISTRESS:
