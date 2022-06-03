@@ -17578,6 +17578,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 612183690}
     m_Modifications:
+    - target: {fileID: 5303753857967887593, guid: d8cd1a952d210174d9f6fc2594cc8cea, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1427377974}
     - target: {fileID: 8178771080054830881, guid: d8cd1a952d210174d9f6fc2594cc8cea, type: 3}
       propertyPath: m_RootOrder
       value: 7
@@ -18685,6 +18689,11 @@ MonoBehaviour:
   m_SelectedFaces: 
   m_SelectedEdges: []
   m_SelectedVertices: 
+--- !u!1 &1427377974 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 545620925297797446, guid: 2ae59cd0743ef7c4ba391d738c91a78a, type: 3}
+  m_PrefabInstance: {fileID: 545620926032694363}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1444011671
 GameObject:
   m_ObjectHideFlags: 0
@@ -19313,7 +19322,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh31358
+  m_Name: pb_Mesh44708
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -19478,6 +19487,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 612183690}
     m_Modifications:
+    - target: {fileID: 5303753857967887593, guid: d8cd1a952d210174d9f6fc2594cc8cea, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1427377974}
     - target: {fileID: 8178771080054830881, guid: d8cd1a952d210174d9f6fc2594cc8cea, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -20436,7 +20449,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh31280
+  m_Name: pb_Mesh44606
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -20601,6 +20614,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 612183690}
     m_Modifications:
+    - target: {fileID: 5303753857967887593, guid: d8cd1a952d210174d9f6fc2594cc8cea, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1427377974}
     - target: {fileID: 8178771080054830881, guid: d8cd1a952d210174d9f6fc2594cc8cea, type: 3}
       propertyPath: m_RootOrder
       value: 8
