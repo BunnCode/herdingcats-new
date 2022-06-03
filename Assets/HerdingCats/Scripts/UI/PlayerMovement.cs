@@ -34,7 +34,8 @@ public class PlayerMovement : MonoBehaviour {
 
         Vector3 userInputMovement = transform.right * x + transform.forward * z;
 
-            //physicsVelocity.y = 0;
+            
+            //Jumping
             if (Input.GetKeyDown(JumpKeyCode) && controller.isGrounded) {
                 physicsVelocity.y += JumpStrength;
             }
@@ -47,6 +48,9 @@ public class PlayerMovement : MonoBehaviour {
             physicsVelocity)  //Physics movement
             * Time.deltaTime); //scale by deltatime for framerate reasons
 
+        //Catch when the player falls off the map
+        if (transform.position.y < -100)
+            FindObjectOfType<HUDscript>().Lose();
         //controller.Move(velocity * Time.deltaTime);
     }
 }

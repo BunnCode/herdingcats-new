@@ -1922,9 +1922,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Level 2
-
-'
+  m_text: Infinite Mode
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0b0642e8da66e2645ac7d3fa62d9543d, type: 2}
   m_sharedMaterial: {fileID: -1403666798006635143, guid: 0b0642e8da66e2645ac7d3fa62d9543d, type: 2}
@@ -2013,6 +2011,7 @@ GameObject:
   - component: {fileID: 1077576632}
   - component: {fileID: 1077576631}
   - component: {fileID: 1077576630}
+  - component: {fileID: 1077576633}
   m_Layer: 5
   m_Name: L2
   m_TagString: Untagged
@@ -2080,7 +2079,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 0
+  m_Interactable: 1
   m_TargetGraphic: {fileID: 1077576631}
   m_OnClick:
     m_PersistentCalls:
@@ -2123,6 +2122,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1077576628}
   m_CullTransparentMesh: 1
+--- !u!114 &1077576633
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1077576628}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ed0c80081abb6a4da8d3a7d126220b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SceneID: 3
 --- !u!1 &1110887105
 GameObject:
   m_ObjectHideFlags: 0

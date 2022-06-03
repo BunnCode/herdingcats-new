@@ -76,6 +76,11 @@ public class HUDscript : MonoBehaviour {
     /// </summary>
     public bool TutorialMode = false;
 
+    /// <summary>
+    /// Is the game in infinite mode?
+    /// </summary>
+    public bool InfiniteMode = false;
+
     // Start is called before the first frame update
     void Start() {
         //freeMeterText.alpha = 0.0F;
@@ -89,12 +94,15 @@ public class HUDscript : MonoBehaviour {
         MainMenuButton.SetActive(false);
         youWinText.SetActive(false);
 
-        if(!TutorialMode)
-            StartCoroutine(CountdownToStart());
-        else {
-            livesText.enabled = false;
+        if (TutorialMode || InfiniteMode) {
             countdownDisplay.enabled = false;
         }
+        else {
+            StartCoroutine(CountdownToStart());
+            countdownDisplay.enabled = true;
+        }
+
+        livesText.enabled = !TutorialMode;
     }
 
     // Update is called once per frame
@@ -112,7 +120,10 @@ public class HUDscript : MonoBehaviour {
         }
     }
 
-    private void Lose() {
+    /// <summary>
+    /// Trigger the losing state
+    /// </summary>
+    public void Lose() {
         gameOverText.SetActive(true);
         playAgainButton.SetActive(true);
         MainMenuButton.SetActive(true);
@@ -120,6 +131,10 @@ public class HUDscript : MonoBehaviour {
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
     }
+
+    /// <summary>
+    /// Trigger the winning state
+    /// </summary>
     private void Win() {
         Time.timeScale = 0;
         youWinText.SetActive(true);

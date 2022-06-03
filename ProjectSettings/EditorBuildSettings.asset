@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/HerdingCats/Scenes/PlayableLevels/Tutorial/Tutorial.unity
     guid: 837543b88e20a8d4f911cb7d8d1320fa
+  - enabled: 1
+    path: Assets/HerdingCats/Scenes/PlayableLevels/InfiniteLevel/InfiniteLevel.unity
+    guid: 6e0e8066d6db9034b8314daa1ea59249
   m_configObjects: {}
