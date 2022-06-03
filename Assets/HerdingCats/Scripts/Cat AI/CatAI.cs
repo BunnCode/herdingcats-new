@@ -144,7 +144,6 @@ public class CatAI : MonoBehaviour {
     /// Set default state.  Once this calls, the AI loop begins!
     /// </summary>
     private void Start() {
-        this.GetComponent<Target>().enabled = false;
         curiosity = Random.Range(0, 90);
         setState(CatState.ROAMING);
         _billboardController = GetComponentInChildren<MultiBillboard>();
@@ -218,11 +217,9 @@ public class CatAI : MonoBehaviour {
         //Trigger appropriate behavior
         switch (currentState) {
             case CatState.ROAMING:
-                this.GetComponent<Target>().enabled = false;
                 StartCoroutine(roam());
                 break;
             case CatState.CURIOUS:
-                this.GetComponent<Target>().enabled = true;
                 StartCoroutine(ApproachHazard());
                 break;
             case CatState.DISTRESS:
